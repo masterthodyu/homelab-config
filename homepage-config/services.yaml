@@ -1,0 +1,406 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+
+# HOMELAB TAB
+- Networking:
+    - Gamma:
+        href: https://unifi.funkyasianboi.org
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ubiquiti-unifi.png
+        description: Unifi Controller
+        siteMonitor: https://unifi.funkyasianboi.org
+        target: _self
+        widget:
+            type: unifi
+            url: https://unifi.funkyasianboi.org
+            site: # optional
+            username: user
+            password: pass
+            key: CHZUycMbfA2Hq8FAThUUV565MnPk48_b # required if using API key instead of username/password
+
+    - Network Optimizer:
+        href: http://10.2.6.124:8042
+        siteMonitor: http://10.2.6.124:8042
+        icon: https://github.com/Ozark-Connect/NetworkOptimizer/blob/main/docs/images/app-logo-v2.png?raw=true
+        description: network optimizer/ health checker
+        target: _self
+    
+    - My Speed:
+        href: https://myspeed.funkyasianboi.org
+        icon: myspeed.png
+        description: Speed Test
+        siteMonitor: https://myspeed.funkyasianboi.org
+        target: _self
+        widget:
+            type: myspeed
+            url: https://myspeed.funkyasianboi.org
+            password: # only required if password is set
+    
+  
+
+- Infrastructure and Data:
+    - Zeta 2.0:
+        href: https://proxmox.funkyasianboi.org
+        icon: proxmox.png
+        description: Proxmox Mini HP
+        siteMonitor: https://proxmox.funkyasianboi.org
+        target: _self
+        widget:
+            type: proxmox
+            url: https://proxmox.funkyasianboi.org
+            username: api@pam!ad4f2189b3193a985b09894134842e94
+            password: {{HOMEPAGE_VAR_PROXMOX_KEY}}
+        
+    
+    - Delta:
+        href: https://truenas.funkyasianboi.org
+        icon: truenas-scale.png
+        description: Truenas Scale Big Server
+        siteMonitor: https://truenas.funkyasianboi.org/api/v2.0/system/info
+
+        target: _self
+        widget:
+            type: truenas
+            url: https://truenas.funkyasianboi.org
+            key: 2-PUDGp2BnCAKItS8ExxmeW4zpPYLwbm1XYGcgmW5RTrjZWMAXD9R1K0Yt5hKw7cMX
+            enablePools: true
+    
+    - Zeta Backup:
+        href: https://proxmoxbackup.funkyasianboi.org/
+        icon: proxmox.png
+        target: _self
+        siteMonitor: https://proxmoxbackup.funkyasianboi.org/
+        widget:
+            type: proxmoxbackupserver
+            
+            url: https://proxmoxbackup.funkyasianboi.org/
+            username: api@pbs!homepage
+            password: 293b0d05-aaed-408e-8f36-9e2df5a65081
+            datastore: datastore1 #optional; if ommitted, will display a combination of all datastores used / total
+    - Theta:
+        href: https://theta.funkyasianboi.org
+        icon: proxmox.png
+        target: _self
+        siteMonitor: https://theta.funkyasianboi.org
+        widget:
+            type: proxmox
+            url: https://theta.funkyasianboi.org
+            username: api@pam!apitoken
+            password: c1f818bb-edf6-476c-b2a6-502b51fe5d37
+    
+
+        
+- Management:
+    - Homepage code editor:
+        href: http://10.2.6.72:8680
+        siteMonitor: http://10.2.6.72:8680
+        icon: coder.png
+        description: Plugin code editor for homepage
+        target: _self
+    
+    - Portainer:
+        href: https://portainer.funkyasianboi.org
+        siteMonitor: https://portainer.funkyasianboi.org
+        icon: portainer.png
+        description: proxmox docker lxc
+        target: _self
+        widget:
+            type: portainer
+            url: https://portainer.funkyasianboi.org
+            env: 3
+            kubernetes: false # optional, defaults to false
+            key: ptr_1gPRp6J8IezHovccLvePfIJLoiABTXrzjJklLCeVuLw=
+    - Planka:
+        href: http://10.2.6.109:1337
+        siteMonitor: http://10.2.6.109:1337
+        icon: planka.png
+        description: Story board for organizing tasks for this homelab
+        target: _self
+    - Next Explorer:
+        href: http://10.2.6.27:30045
+        icon: nextexplorer.png
+        description: File management for truenas
+        target: _self
+        
+- Monitoring:
+    - UptimeKuma:
+        href: https://uptimekuma.funkyasianboi.org
+        siteMonitor: https://uptimekuma.funkyasianboi.org
+        description: Uptime Monitor
+        icon: uptime-kuma.png
+        target: _self
+        widget:
+            type: uptimekuma
+            url: https://uptimekuma.funkyasianboi.org
+            slug: servers
+    - Beszel:
+        href: http://10.2.6.131:8090/
+        sitemonitor: http://10.2.6.131:8090/
+        icon: beszel.png
+        target: _self
+        widget:
+            type: beszel
+            url: http://10.2.6.131:8090/
+            username: anthonyhoang1998@gmail.com # email
+            password: nO5gaas6oc1H6V
+            systemId: Proxmox # optional
+            version: 2 # optional, default is 1
+            fields:
+            - cpu
+            - status
+            - updated
+            - memory
+            - disk
+            - network
+    
+- Media:
+    - Qbittorrent:
+        href: http://10.2.6.172:8090
+        siteMonitor: http://10.2.6.172:8090
+        icon: qbittorrent.png
+        target: _self
+        widget:
+            type: qbittorrent
+            url: http://10.2.6.172:8090
+            username: admin
+            password: QbitThodyu!98
+            enableLeechProgress: true # optional, defaults to false
+            enableLeechSize: true # optional, defaults to false    
+    - Prowlarr:
+        href: http://10.2.6.132:9696
+        siteMonitor: http://10.2.6.132:9696/
+        icon: prowlarr.png
+        target: _self
+        widget:
+            type: prowlarr
+            url: http://10.2.6.132:9696
+            key: d682ac140f1b470ebf31479e2c456a9c
+    - Radarr:
+        href: http://10.2.6.60:7878
+        siteMonitor: http://10.2.6.60:7878
+        icon: radarr.png
+        target: _self
+        widget:
+            type: radarr
+            url: http://10.2.6.60:7878
+            key: 0703463843dd4c2ca7473095c98ce498
+            enableQueue: true # optional, defaults to false
+    - Sonarr:
+        href: http://10.2.6.89:8989
+        siteMonitor: http://10.2.6.89:8989
+        icon: sonarr.png
+        target: _self
+        widget:
+            type: sonarr
+            url: http://10.2.6.89:8989
+            key: 05bcfd25ba9e4c97977213ee2e52f3d7
+            enableQueue: true # optional, defaults to false
+    - Lidarr:
+        href: http://10.2.6.250:8686
+        siteMonitor: http://10.2.6.250:8686
+        icon: lidarr.png
+        target: _self
+        widget:
+            type: lidarr
+            url: http://10.2.6.250:8686
+            key: 93a6d06670f14778b82a916a896ae73b
+    - Bazarr:
+        href: http://10.2.6.125:6767/
+        siteMonitor: http://10.2.6.125:6767/
+        icon: bazarr.png
+        target: _self
+        widget:
+            type: bazarr
+            url: http://10.2.6.125:6767/
+            key: 36f06fdcd9cf55fc8a8c2725c3187197
+    - flaresolverr:
+        href: http://10.2.6.179:8191
+        siteMonitor: http://10.2.6.179:8191
+        icon: flaresolverr.png
+    - Jellyfin:
+        href: https://jellyfin.funkyasianboi.org/
+        siteMonitor: http://10.2.6.201:8096
+        icon: jellyfin.png
+        target: _self
+        widget:
+            type: jellyfin
+            url: https://jellyfin.funkyasianboi.org/
+            key: a40b93b8de9946cb9b3b20c647eadd0c
+            version: 2 # optional, default is 1
+            enableBlocks: true # optional, defaults to false
+            enableNowPlaying: true # optional, defaults to true
+            enableUser: true # optional, defaults to false
+            enableMediaControl: false # optional, defaults to true
+            showEpisodeNumber: true # optional, defaults to false
+            expandOneStreamToTwoRows: false # optional, defaults to true
+    
+
+
+- Security and Identity:  
+    - Vaultwarden:
+        href: https://vaultwarden.funkyasianboi.org/
+        description: Password Manager
+        icon: vaultwarden.png
+        proxmoxNode: pve
+        proxmoxVMID: 203
+        proxmoxType: lxc
+        target: _self
+        
+   
+    - Nginx Proxy Manager:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/nginx-proxy-manager.png
+        href: http://10.2.6.199:81
+        description: Web server proxy manager
+        proxmoxNode: pve
+        proxmoxVMID: 200
+        proxmoxType: lxc
+        target: _self
+        widget:
+            type: npm
+            url: http://10.2.6.199:81
+            username: anthonyhoang1998@gmail.com
+            password: Thodyu!234
+
+- Automation:
+    - Kestra:
+        href: https://kestra-demo-1.srv-prod-1.home.clcreative.de
+        description: kestra-demo-1 on srv-prod-1
+        icon: https://kestra-io.gallerycdn.vsassets.io/extensions/kestra-io/kestra/0.0.1/1692285562923/Microsoft.VisualStudio.Services.Icons.Default
+        target: _self
+    - Ansible Semaphore:
+        href: https://ansiblesemaphore-prod-1.srv-prod-1.home.clcreative.de
+        description: ansiblesemaphore-prod-1 on srv-prod-1
+        icon: si-ansible-#EE0000
+    - ArgoCD:
+        href: https://argocd-prod-1.kube-prod-1.home.clcreative.de
+        description: argocd-prod-1 on kube-prod-1
+        icon: si-argo-#EF7B4D
+
+- IoT and Smarthome:
+    - Home Assistant:
+        href: https://homeassistant-prod-1.srv-prod-7.home.clcreative.de
+        icon: home-assistant.png
+        description: homeassistant-prod-1 on srv-prod-7
+        target: _self
+        widget:
+            type: homeassistant
+            url: http://homeassistant:8123
+            key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
+            custom:
+
+- Other:
+    - Homepage:
+        href: http://10.2.6.27:3001
+        icon: homepage.png
+        description: dashboard you're viewing network
+        
+    - Mealie:
+        href: http://10.2.6.240:9000
+        icon: mealie.png
+        description: Online Recipe Book
+        target: _self
+        widget:
+            type: mealie
+            url: http://10.2.6.240:9000
+            key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb25nX3Rva2VuIjp0cnVlLCJpZCI6ImJhMDAxMmI3LTcyZWItNDUwMy1hZTYzLWU4NjFkYThjNDAwNSIsIm5hbWUiOiJob21lcGFnZSIsImludGVncmF0aW9uX2lkIjoiZ2VuZXJpYyIsImV4cCI6MTkzMjI4NTEyMX0.GUztNsCIuEV2ISYn4H3z_j8QlLr3Ee-10UEzlrzYkF4
+            version: 2 # only required if version > 1, defaults to 1
+    - Immich:
+        href: https://immich.funkyasianboi.org
+        icon: immich.png
+        description: Media viewer/ google photo self hosted
+        target: _self
+        widget:
+            type: immich
+            url: https://immich.funkyasianboi.org
+            key: FuCDzPqxMcQZ9XqOtu3I7xUIdcuUldv33BtS0jg2w
+            version: 2 # optional, default is 1
+    - Sparkyfitness:
+        href: http://10.2.6.9:3004
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/sparkyfitness.png
+        description: Fitness and calorie tracker
+        target: _self
+    - Nextcloud:
+        href: https://nextcloud.funkyasianboi.org/
+        icon: nextcloud.png
+        description: Truenas hosted "google" drive
+        target: _self
+        widget:
+            type: nextcloud
+            url: https://nextcloud.funkyasianboi.org
+            username: admin
+            password: Thodyu!234
+    - Collabora:
+        href: https://collabora.funkyasianboi.org
+        icon: 
+        description: Plug in for Nextcloud
+        target: _self
+    - Reactive Resume:
+        href: http://10.2.6.52:3000/
+        icon: reactive-resume.png
+        description: Resume builder
+        target: _self
+        statusStyle: "dot"
+    - Open Archiver:
+        href: http://10.2.6.9:3000/
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/open-archiver.png
+        description: Email archiver
+        target: _self
+        statusStyle: "dot"
+    - Wiki.js:
+        href: https://wiki.funkyasianboi.org
+        icon: wikijs.png
+        description: Personal Homelab Wiki
+        target: _self
+        statusStyle: "dot"
+    - Medikeep: 
+        href: http://10.2.6.9:8005
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/medikeep.png
+        description: Medical Records
+        target: _self
+        statusStyle: "dot"
+
+
+# Beszel Tab  
+- Beszel stats:
+    - Zeta 2.0:
+        href: https://proxmox.funkyasianboi.org
+        icon: proxmox.png
+        description: Proxmox Mini HP
+        siteMonitor: https://proxmox.funkyasianboi.org
+        target: _self
+        widget:
+            type: beszel
+            url: http://10.2.6.131:8090/
+            username: anthonyhoang1998@gmail.com # email
+            password: nO5gaas6oc1H6V
+            systemId: Proxmox # optional
+            version: 2 # optional, default is 1
+            fields:
+            - cpu
+            - disk
+            - memory
+            - network
+    
+# - Calendar:
+#     - Calendar:
+#         widget:
+#             type: calendar
+#             firstDayInWeek: sunday # optional - defaults to monday
+#             view: monthly # optional - possible values monthly, agenda
+#             maxEvents: 10 # optional - defaults to 10
+#             showTime: true # optional - show time for event happening today - defaults to false
+#             timezone:  # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+#             integrations: # optional
+#             - type: ical # Show calendar events from another service
+#               url: https://p34-caldav.icloud.com/published/2/MjAzMjgzMzU4NTIwMzI4MwAjDLJj6gmOTaDvpeE6W2bkjBvS91NG7PPtY95m1OiI # URL with calendar events
+#               name: Anthony's Events # required - name for these calendar events
+#               color: cyan # optional - defaults to pre-defined color for the service (zinc for ical)
+#               params: # optional - additional params for the service
+#                 showName: true # optional - show name before event title in event line - defaults to false
+#             - type: ical # Show calendar events from another service
+#               url: https://p34-caldav.icloud.com/published/2/MjAzMjgzMzU4NTIwMzI4MwAjDLJj6gmOTaDvpeE6W2b15Vld_yOqzXk3r9wXP2ci5Ioew4XDm6Z50RAkMdAkpSKt4QjwujnBse6cuY-PPEA # URL with calendar events
+#               name: Meg's Events # required - name for these calendar events
+#               color: emerald # optional - defaults to pre-defined color for the service (zinc for ical)
+#               params: # optional - additional params for the service
+#                 showName: true # optional - show name before event title in event line - defaults to false
