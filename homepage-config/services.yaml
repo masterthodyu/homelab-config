@@ -1,0 +1,400 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+
+# HOMELAB TAB
+- Networking:
+    - Gamma:
+        href: {{HOMEPAGE_VAR_UNIFI_URL}}
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ubiquiti-unifi.png
+        description: Unifi Controller
+        siteMonitor: {{HOMEPAGE_VAR_UNIFI_URL}}
+        target: _self
+        widget:
+            type: unifi
+            url: {{HOMEPAGE_VAR_UNIFI_URL}}
+            site: # optional
+            username: user
+            password: pass
+            key: {{HOMEPAGE_VAR_UNIFI_KEY}} # required if using API key instead of username/password
+
+    - Network Optimizer:
+        href: {{HOMEPAGE_VAR_NETOP_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_NETOP_URL}}
+        icon: https://github.com/Ozark-Connect/NetworkOptimizer/blob/main/docs/images/app-logo-v2.png?raw=true
+        description: network optimizer/ health checker
+        target: _self
+    
+    - My Speed:
+        href: {{HOMEPAGE_VAR_MYSPEED_URL}}
+        icon: myspeed.png
+        description: Speed Test
+        siteMonitor: {{HOMEPAGE_VAR_MYSPEED_URL}}
+        target: _self
+        widget:
+            type: myspeed
+            url: {{HOMEPAGE_VAR_MYSPEED_URL}}
+            password: # only required if password is set
+    
+  
+
+- Infrastructure and Data:
+    - Zeta 2.0:
+        href: {{HOMEPAGE_VAR_PROXMOX_URL}}
+        icon: proxmox.png
+        description: Proxmox Mini HP
+        siteMonitor: {{HOMEPAGE_VAR_PROXMOX_URL}}
+        target: _self
+        widget:
+            type: proxmox
+            url: {{HOMEPAGE_VAR_PROXMOX_URL}}
+            username: {{HOMEPAGE_VAR_PROXMOX_TOKEN}}
+            password: {{HOMEPAGE_VAR_PROXMOX_KEY}}
+        
+    
+    - Delta:
+        href: {{HOMEPAGE_VAR_TRUENAS_URL}}
+        icon: truenas-scale.png
+        description: Truenas Scale Big Server
+        siteMonitor: {{HOMEPAGE_VAR_TRUENAS_API}}
+
+        target: _self
+        widget:
+            type: truenas
+            url: {{HOMEPAGE_VAR_TRUENAS_URL}}
+            key: {{HOMEPAGE_VAR_TRUENAS_KEY}}
+            enablePools: true
+    
+    - Proxmox Backup Server:
+        href: {{HOMEPAGE_VAR_PBS_URL}}
+        icon: proxmox.png
+        target: _self
+        siteMonitor: {{HOMEPAGE_VAR_PBS_URL}}
+        widget:
+            type: proxmoxbackupserver
+            url: {{HOMEPAGE_VAR_PBS_URL}}
+            username: {{HOMEPAGE_VAR_PBS_USER}}
+            password: {{HOMEPAGE_VAR_PBS_TOKEN}}
+            datastore: datastore1 #optional; if ommitted, will display a combination of all datastores used / total
+    - Theta:
+        href: {{HOMEPAGE_VAR_PROX2_URL}}
+        icon: proxmox.png
+        target: _self
+        siteMonitor: {{HOMEPAGE_VAR_PROX2_URL}}
+        widget:
+            type: proxmox
+            url: {{HOMEPAGE_VAR_PROX2_URL}}
+            username: {{HOMEPAGE_VAR_PROX2_TOKEN}}
+            password: {{HOMEPAGE_VAR_PROX2_KEY}}
+    
+
+        
+- Management:
+    - Homepage code editor:
+        href: {{HOMEPAGE_VAR_CODE_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_CODE_URL}}
+        icon: coder.png
+        description: Plugin code editor for homepage
+        target: _self
+    
+    - Portainer:
+        href: {{HOMEPAGE_VAR_PORT_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_PORT_URL}}
+        icon: portainer.png
+        description: proxmox docker and portainer vm
+        target: _self
+        widget:
+            type: portainer
+            url: {{HOMEPAGE_VAR_PORT_URL}}
+            env: 3
+            kubernetes: false # optional, defaults to false
+            key: {{HOMEPAGE_VAR_PORT_API}}
+    - Planka:
+        href: {{HOMEPAGE_VAR_PLANKA}}
+        siteMonitor: {{HOMEPAGE_VAR_PLANKA}}
+        icon: planka.png
+        description: Story board for organizing tasks for this homelab
+        target: _self
+    - Next Explorer:
+        href: {{HOMEPAGE_VAR_NEXTEX}}
+        siteMonitor: {{HOMEPAGE_VAR_NEXTEX}}
+        icon: nextexplorer.png
+        description: File management for truenas
+        target: _self
+        
+- Monitoring:
+    - UptimeKuma:
+        href: {{HOMEPAGE_VAR_UPTIME_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_UPTIME_URL}}
+        description: Uptime Monitor
+        icon: uptime-kuma.png
+        target: _self
+        widget:
+            type: uptimekuma
+            url: {{HOMEPAGE_VAR_UPTIME_URL}}
+            slug: servers
+    - Beszel:
+        href: {{HOMEPAGE_VAR_BESZEL_URL}}
+        sitemonitor: {{HOMEPAGE_VAR_BESZEL_URL}}
+        icon: beszel.png
+        target: _self
+        widget:
+            type: beszel
+            url: {{HOMEPAGE_VAR_BESZEL_URL}}
+            username: {{HOMEPAGE_VAR_EMAIL}} # email
+            password: {{HOMEPAGE_VAR_BESZEL_PASS}}
+            systemId: Proxmox # optional
+            version: 2 # optional, default is 1
+            fields:
+            - cpu
+            - status
+            - updated
+            - memory
+            - disk
+            - network
+    
+- Media:
+    - Qbittorrent:
+        href: {{HOMEPAGE_VAR_QBIT_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_QBIT_URL}}
+        icon: qbittorrent.png
+        target: _self
+        widget:
+            type: qbittorrent
+            url: {{HOMEPAGE_VAR_QBIT_URL}}
+            username: {{HOMEPAGE_VAR_QBIT_USER}}
+            password: {{HOMEPAGE_VAR_QBIT_PASS}}
+            enableLeechProgress: true # optional, defaults to false
+            enableLeechSize: true # optional, defaults to false    
+    - Prowlarr:
+        href: {{HOMEPAGE_VAR_PROW_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_PROW_URL}}
+        icon: prowlarr.png
+        target: _self
+        widget:
+            type: prowlarr
+            url: {{HOMEPAGE_VAR_PROW_URL}}
+            key: {{HOMEPAGE_VAR_PROW_API}}
+    - Radarr:
+        href: {{HOMEPAGE_VAR_RAD_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_RAD_URL}}
+        icon: radarr.png
+        target: _self
+        widget:
+            type: radarr
+            url: {{HOMEPAGE_VAR_RAD_URL}}
+            key: {{HOMEPAGE_VAR_RAD_API}}
+            enableQueue: true # optional, defaults to false
+    - Sonarr:
+        href: {{HOMEPAGE_VAR_SON_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_SON_URL}}
+        icon: sonarr.png
+        target: _self
+        widget:
+            type: sonarr
+            url: {{HOMEPAGE_VAR_SON_URL}}
+            key: {{HOMEPAGE_VAR_SON_API}}
+            enableQueue: true # optional, defaults to false
+    - Lidarr:
+        href: {{HOMEPAGE_VAR_LID_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_LID_URL}}
+        icon: lidarr.png
+        target: _self
+        widget:
+            type: lidarr
+            url: {{HOMEPAGE_VAR_LID_URL}}
+            key: {{HOMEPAGE_VAR_LID_API}}
+    - Bazarr:
+        href: {{HOMEPAGE_VAR_BAZ_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_BAZ_URL}}
+        icon: bazarr.png
+        target: _self
+        widget:
+            type: bazarr
+            url: {{HOMEPAGE_VAR_BAZ_URL}}
+            key: {{HOMEPAGE_VAR_BAZ_API}}
+    - Flaresolverr:
+        href: {{HOMEPAGE_VAR_FLARE}}
+        siteMonitor: {{HOMEPAGE_VAR_FLARE}}
+        icon: flaresolverr.png
+    - Byparr:
+        href: {{HOMEPAGE_VAR_BYPARR}}
+        siteMonitor: {{HOMEPAGE_VAR_BYPARR}}
+        icon: byparr.png
+    - Jellyfin:
+        href: {{HOMEPAGE_VAR_JELLY_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_JELLY_URL}}
+        icon: jellyfin.png
+        target: _self
+        widget:
+            type: jellyfin
+            url: {{HOMEPAGE_VAR_JELLY_URL}}
+            key: {{HOMEPAGE_VAR_JELLY_API}}
+            version: 2 # optional, default is 1
+            enableBlocks: true # optional, defaults to false
+            enableNowPlaying: true # optional, defaults to true
+            enableUser: true # optional, defaults to false
+            enableMediaControl: false # optional, defaults to true
+            showEpisodeNumber: true # optional, defaults to false
+            expandOneStreamToTwoRows: false # optional, defaults to true
+    - Immich:
+        href: {{HOMEPAGE_VAR_IMMICH_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_IMMICH_URL}}
+        icon: immich.png
+        description: Media viewer/ google photo self hosted
+        target: _self
+        widget:
+            type: immich
+            url: {{HOMEPAGE_VAR_IMMICH_URL}}
+            key: {{HOMEPAGE_VAR_IMMICH_API}}
+            version: 2 # optional, default is 1
+
+- IoT and Smarthome:
+    - Home Assistant:
+        href: {{HOMEPAGE_VAR_HOME_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_HOME_URL}}
+        icon: home-assistant.png
+        description: Homeassistant Green
+        target: _self
+        widget:
+            type: homeassistant
+            url: {{HOMEPAGE_VAR_HOME_URL}}
+            key: {{HOMEPAGE_VAR_HOME_KEY}}
+            custom:
+
+
+- Security and Identity:  
+    - Vaultwarden:
+        href: {{HOMEPAGE_VAR_VAULT_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_VAULT_URL}}
+        description: Password Manager
+        icon: vaultwarden.png
+        target: _self
+        
+   
+    - Nginx Proxy Manager:
+        href: {{HOMEPAGE_VAR_NGINX_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_NGINX_URL}}
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/nginx-proxy-manager.png
+        description: Web server proxy manager
+        target: _self
+        widget:
+            type: npm
+            url: {{HOMEPAGE_VAR_NGINX_URL}}
+            username: {{HOMEPAGE_VAR_EMAIL}}
+            password: {{HOMEPAGE_VAR_NGINX_PASS}}
+
+
+
+
+- Other:
+    - Homepage:
+        href: {{HOMEPAGE_VAR_HOMEPAGE}}
+        siteMonitor: {{HOMEPAGE_VAR_HOMEPAGE}}
+        icon: homepage.png
+        description: dashboard you're viewing right now
+        
+    - Mealie:
+        href: {{HOMEPAGE_VAR_MEAL_URL}}
+        siteMonitor: {{HOMEPAGE_VAR_MEAL_URL}}
+        icon: mealie.png
+        description: Online Recipe Book
+        target: _self
+        widget:
+            type: mealie
+            url: {{HOMEPAGE_VAR_MEAL_URL}}
+            key: {{HOMEPAGE_VAR_MEAL_API}}
+            version: 2 # only required if version > 1, defaults to 1
+    
+    - Sparkyfitness:
+        href: {{HOMEPAGE_VAR_SPARK}}
+        siteMonitor: {{HOMEPAGE_VAR_SPARK}}
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/sparkyfitness.png
+        description: Fitness and calorie tracker
+        target: _self
+    # - Nextcloud:
+    #     href: 
+    #     icon: nextcloud.png
+    #     description: Truenas hosted "google" drive
+    #     target: _self
+    #     widget:
+    #         type: nextcloud
+    #         url: 
+    #         username: 
+    #         password: 
+    # - Collabora:
+    #     href: https://collabora.funkyasianboi.org
+    #     icon: 
+    #     description: Plug in for Nextcloud
+    #     target: _self
+    - Reactive Resume:
+        href: {{HOMEPAGE_VAR_RESUME}}
+        siteMonitor: {{HOMEPAGE_VAR_RESUME}}
+        icon: reactive-resume.png
+        description: Resume builder
+        target: _self
+    - Open Archiver:
+        href: {{HOME_VAR_OPEN}}
+        siteMonitor: {{HOME_VAR_OPEN}}
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/open-archiver.png
+        description: Email archiver
+        target: _self
+    - Wiki.js:
+        href: {{HOME_VAR_WIKI}}
+        siteMonitor: {{HOME_VAR_WIKI}}
+        icon: wikijs.png
+        description: Personal Homelab Wiki
+        target: _self
+    - Medikeep: 
+        href: {{HOME_VAR_MEDI}}
+        siteMonitor: {{HOME_VAR_MEDI}}
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/medikeep.png
+        description: Medical Records
+        target: _self
+
+
+
+# Beszel Tab  
+- Beszel stats:
+    - Zeta 2.0:
+        href: {{HOMEPAGE_VAR_PROXMOX_URL}}
+        icon: proxmox.png
+        description: Proxmox Mini HP
+        siteMonitor: {{HOMEPAGE_VAR_PROXMOX_URL}}
+        target: _self
+        widget:
+            type: beszel
+            url: {{HOMEPAGE_VAR_BESZEL_URL}}
+            username: {{HOMEPAGE_VAR_EMAIL}} # email
+            password: {{HOMEPAGE_VAR_BESZEL_PASS}}
+            systemId: Proxmox # optional
+            version: 2 # optional, default is 1
+            fields:
+            - cpu
+            - disk
+            - memory
+            - network
+    
+# - Calendar:
+#     - Calendar:
+#         widget:
+#             type: calendar
+#             firstDayInWeek: sunday # optional - defaults to monday
+#             view: monthly # optional - possible values monthly, agenda
+#             maxEvents: 10 # optional - defaults to 10
+#             showTime: true # optional - show time for event happening today - defaults to false
+#             timezone:  # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+#             integrations: # optional
+#             - type: ical # Show calendar events from another service
+#               url: https://p34-caldav.icloud.com/published/2/MjAzMjgzMzU4NTIwMzI4MwAjDLJj6gmOTaDvpeE6W2bkjBvS91NG7PPtY95m1OiI # URL with calendar events
+#               name: Anthony's Events # required - name for these calendar events
+#               color: cyan # optional - defaults to pre-defined color for the service (zinc for ical)
+#               params: # optional - additional params for the service
+#                 showName: true # optional - show name before event title in event line - defaults to false
+#             - type: ical # Show calendar events from another service
+#               url: https://p34-caldav.icloud.com/published/2/MjAzMjgzMzU4NTIwMzI4MwAjDLJj6gmOTaDvpeE6W2b15Vld_yOqzXk3r9wXP2ci5Ioew4XDm6Z50RAkMdAkpSKt4QjwujnBse6cuY-PPEA # URL with calendar events
+#               name: Meg's Events # required - name for these calendar events
+#               color: emerald # optional - defaults to pre-defined color for the service (zinc for ical)
+#               params: # optional - additional params for the service
+#                 showName: true # optional - show name before event title in event line - defaults to false

@@ -1,0 +1,23 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+
+
+#- resources:
+    #expanded: true
+    #info: true
+    #cpu: true
+    #cputemp: true
+    #memory: true
+    #disk: /
+
+- search:
+    provider: google
+    target: _blank
+  
+- datetime:
+    text_size: xl
+    format:
+        timeStyle: short
+        # hourCycle: h23
+

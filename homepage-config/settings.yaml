@@ -1,0 +1,85 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+
+title: My Awesome Homepage
+headerStyle: boxed
+#showStats: false
+statusStyle: "dot"
+theme: dark
+color: slate
+hideVersion: true
+disableCollapse: true
+
+
+background: 
+  image: https://images.unsplash.com/photo-1643725173053-ed68676f1878?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9rZW1vbnxlbnwwfHwwfHx8MA%3D%3D
+  blur: xl
+  brightness: 90
+  opacity: 60
+
+
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+  provider: google # google, duckduckgo, bing, baidu, brave or custom
+
+cardBlur: sm
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+#useEqualHeights: true
+
+layout:
+  Usual Links:
+    tab: Bookmark
+  Homelab links:
+    tab: Bookmark
+  Homepage tools:
+    tab: Bookmark
+  Networking:
+    style: column
+    icon: mdi-network-#FFFFFF
+    tab: Homelab
+  Infrastructure and Data:
+    style: column
+    icon: mdi-server-#FFFFFF
+    tab: Homelab
+  Management:
+    icon: mdi-auto-fix-#FFFFFF
+    tab: Homelab
+    style: column
+  Monitoring:
+    icon: mdi-list-status-#FFFFFF
+    tab: Homelab
+    style: column
+  Media:
+    icon: mdi-multimedia-#FFFFFF
+    tab: Homelab
+    style: row
+    columns: 4
+  Automation:
+    icon: mdi-cog-play-#FFFFFF
+    tab: Homelab
+    style: column
+  IoT and Smarthome:
+    icon: mdi-home-#FFFFFF
+    tab: Homelab
+    style: column
+  Security and Identity:
+    icon: mdi-shield-lock-#FFFFFF
+    tab: Homelab
+    style: column
+  Other:
+    tab: Homelab
+    style: row
+    columns: 4
+  Beszel stats:
+    tab: Beszel stats
+    
