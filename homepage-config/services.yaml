@@ -352,6 +352,12 @@
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/medikeep.png
         description: Medical Records
         target: _self
+    - Forgejo:
+        href: {{HOME_VAR_FORGEJO}}
+        siteMonitor: {{HOME_VAR_FORGEJO}}
+        icon: forgejo.png
+        target: _self
+        description: code library
 
 
 
