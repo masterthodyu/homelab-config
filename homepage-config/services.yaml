@@ -336,29 +336,29 @@
         target: _self
 
     - Open Archiver:
-        href: {{HOME_VAR_OPEN}}
-        siteMonitor: {{HOME_VAR_OPEN}}
+        href: {{HOMEPAGE_VAR_OPEN}}
+        siteMonitor: {{HOMEPAGE_VAR_OPEN}}
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/open-archiver.png
         description: Email archiver
         target: _self
 
     - Wiki.js:
-        href: {{HOME_VAR_WIKI}}
-        siteMonitor: {{HOME_VAR_WIKI}}
+        href: {{HOMEPAGE_VAR_WIKI}}
+        siteMonitor: {{HOMEPAGE_VAR_WIKI}}
         icon: wikijs.png
         description: Personal Homelab Wiki
         target: _self
 
     - Medikeep: 
-        href: {{HOME_VAR_MEDI}}
-        siteMonitor: {{HOME_VAR_MEDI}}
+        href: {{HOMEPAGE_VAR_MEDI}}
+        siteMonitor: {{HOMEPAGE_VAR_MEDI}}
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/medikeep.png
         description: Medical Records
         target: _self
 
     - Forgejo:
-        href: {{HOME_VAR_FORGEJO}}
-        siteMonitor: {{HOME_VAR_FORGEJO}}
+        href: {{HOMEPAGE_VAR_FORGEJO}}
+        siteMonitor: {{HOMEPAGE_VAR_FORGEJO}}
         icon: forgejo.png
         target: _self
         description: code library
